@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<! Notes to editors of this file:
+    - 2-column tab stops, with spaces, not tab characters.
+ -->
+
+<head>
+  <meta
+    charset="utf-8">
+  <meta
+    http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta
+    name="viewport"
+    content="minimum-scale=1,maximum-scale=1,user-scalable=no,width=device-width,initial-scale=1">
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes">
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black">
+  <meta
+    name="description"
+    content="PhenoPackets.org Information Site">
+  <meta
+    name="author"
+    content="PhenoPackets.org">
+
+  <link
+    rel="shortcut icon"
+    href="favicon.ico">
+
+  <base href="/">
+
+  <title>
+    PhenoPackets - Concepts and Technology
+  </title>
+
+  <link href="site/css/bootstrap.min.css" rel="stylesheet">
+  <link href="site/css/landing.css" rel="stylesheet">
+  <link href="site/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="site/js/marked.min.js"></script>
+  <script>
+    function loadMarkdown(url, id) {
+      var oReq = new XMLHttpRequest();
+      oReq.addEventListener("load",
+          function() {
+            var markdownSource = this.responseText;
+            //
+            // This is a hack so that the Markdown document can have image links that work when
+            // viewed through GitHub (![](./content/foo.img) by default, but can also be used
+            // when rendered through this webpage, by removing the './'.
+            //
+            markdownSource = markdownSource.replace(/\!\[\]\(\.\//g, '![](content/');
+
+            var output = document.getElementById(id);
+            output.innerHTML = marked(markdownSource);
+          }
+        );
+      oReq.open("GET", url);
+      oReq.send();
+    }
+    // loadMarkdown("content/Overview.md", 'overview-detailed-markdown');
+    loadMarkdown("content/Vision.md", 'a-vision-detailed-markdown');
+    loadMarkdown("content/Technology.md", 'a-technology-detailed-markdown');
+    loadMarkdown("content/Community.md", 'a-community-detailed-markdown');
+    loadMarkdown("content/Documentation.md", 'a-documentation-detailed-markdown');
+  </script>
+
+</head>
+
+
+
+<body>
+  <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+      <li class="sidebar-brand">
+        <a href="#top" onclick=$("#menu-close").click();>
+          <span>
+          <img src="site/PhenoPackets_Logo.png" style="height:50px;">
+          </span>
+          PhenoPackets
+        </a>
+      </li>
+      <li>
+        <a href="#top" onclick=$("#menu-close").click();>Home</a>
+      </li>
+      <li>
+        <a href="#phenopackets-are" onclick=$("#menu-close").click();>About PhenoPackets</a>
+        <ul>
+          <li>
+            <a href="#a-vision" onclick=$("#menu-close").click();>The Vision</a>
+          </li>
+          <li>
+            <a href="#a-technology" onclick=$("#menu-close").click();>The Technology</a>
+          </li>
+          <li>
+            <a href="#a-community" onclick=$("#menu-close").click();>The Community</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#documentation" onclick=$("#menu-close").click();>Documentation</a>
+      </li>
+      <li>
+        <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <header id="top" class="header">
+    <div class="text-vertical-center">
+      <img src="site/PhenoPackets_Logo.png" style="margin-top:10px;">
+      <br>
+      <br>
+      <h1>PhenoPackets</h1>
+      <h3><b>Open and Computable Bioinformation</b></h3>
+      <br>
+      <br>
+      <a href="#phenopackets-are" class="btn btn-dark btn-lg">
+        Learn More
+      </a>
+    </div>
+  </header>
+
+  <section id="phenopackets-are" class="services bg-primary">
+    <div class="container">
+      <div class="row row-inset">
+        <div class="col-lg-10 col-lg-offset-1 text-center">
+          <h2>PhenoPackets Are …</h2>
+          <hr class="small">
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="service-item">
+                <span class="fa-stack fa-4x">
+                  <a href="#a-vision" class="btn-fa">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-lightbulb-o fa-stack-1x text-primary"></i>
+                  </a>
+                </span>
+                <h4>
+                  <strong>A Vision</strong>
+                </h4>
+                <p>
+                  An open standard for sharing disease and phenotype information will improve
+                  our ability to understand, diagnose, and treat both rare and common diseases.
+
+                  A PhenoPacket links detailed phenotype descriptions with disease, patient, and genetic information, enabling clinicians, biologists, and disease and drug researchers to build more complete models of disease.
+
+                  The standard is designed to encourage wide adoption and synergy between the people, organizations and systems that comprise the joint effort to address human disease and biological understanding.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="service-item">
+                <span class="fa-stack fa-4x">
+                  <a href="#a-technology" class="btn-fa">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-cogs fa-stack-1x text-primary"></i>
+                  </a>
+                </span>
+                <h4>
+                  <strong>A Technology</strong>
+                </h4>
+                <p>
+                  PhenoPackets are represented as PXF (Phenotype Exchange Format) files, which may be encoded in JSON or YAML. Each packet associates a list of phenotypic abnormalities with a disease and patient, including details about age, sex, onset, and evidence.
+
+                  PXF uses standard ontologies to ensure interoperability between diverse sources and consumers, to simplify text-mining, and to enable machine reasoning.
+
+                  Software libraries supporting PXF have been written for Java, Python, and Javascript, and the open standard makes it easy to adapt to other languages, systems and applications.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="service-item">
+                <span class="fa-stack fa-4x">
+                  <a href="#a-community" class="btn-fa">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-user-md fa-stack-1x text-primary"></i>
+                  </a>
+                </span>
+                <h4>
+                  <strong>A Community</strong>
+                </h4>
+                <p>
+                  PhenoPackets is an evolving standard jointly developed by researchers, clinicians, curators and authors. Journals, model organism databases, medical data repositories and commercial efforts are encouraged to adopt PhenoPackets as a way to improve their use and publication of detailed and computable characterizations of disease. This will enable new modes of treatment and drug discovery, including translational research, precision medicine, and automated pipelines revealing knowledge in existing publications and databases.
+                </p>
+              </div>
+            </div>
+          </div>
+<!--
+          <a href="#overview-detailed" class="btn btn-dark"
+            onclick=$("#overview-detailed").toggleClass('hidden');>
+            Details
+          </a>
+ -->
+
+        </div>
+      </div>
+<!--
+      <div class="row hidden" id="overview-detailed">
+        <div class="col-xs-12">
+          <div id="overview-detailed-markdown" class="markdown">
+          </div>
+        </div>
+      </div>
+ -->
+    </div>
+  </section>
+
+  <section id="a-vision" class="services bg-secondary">
+    <div class="container">
+      <div class="row row-inset">
+        <div class="col-xs-12 text-center">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-lightbulb-o fa-stack-1x text-primary"></i>
+          </span>
+          <h3>The Vision of PhenoPackets</h3>
+        </div>
+        <div class="col-xs-7 xtext-center">
+          <p class="lead">
+            Using PhenoPackets to communicate bioinformation ensures that knowledge is liberated and useable by the existing and nascent computational pipelines, databases and journals. This enables new possibilities for research, diagnosis and treatment. Some of the features of PhenoPackets are listed below.
+          </p>
+        </div>
+        <div class="col-xs-5 xtext-center">
+          <ul>
+            <li>
+              Searchability, Comparability
+            </li>
+            <li>
+              Accessible outside paywalls and private data sources
+            </li>
+            <li>
+              Attributable and Citeable
+            </li>
+            <li>
+              Interoperable and Computable
+            </li>
+            <li>
+              Exchangeable across contexts and disciplines
+            </li>
+
+          </ul>
+        </div>
+        <div class="col-xs-12 text-center">
+          <a href="#a-vision-detailed" class="btn btn-dark"
+            onclick=$("#a-vision-detailed").toggleClass('hidden');>
+            Details
+          </a>
+        </div>
+      </div>
+
+      <div class="row hidden" id="a-vision-detailed">
+        <div class="col-xs-12">
+          <div id="a-vision-detailed-markdown" class="markdown">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="a-technology" class="services bg-primary">
+    <div class="container">
+      <div class="row row-inset">
+        <div class="col-xs-12 text-center">
+          <span class="fa-stack fa-4x bg-primary">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-cogs fa-stack-1x text-primary"></i>
+          </span>
+          <h3>The Technology of PhenoPackets</h3>
+          <p class="lead">
+            There are currently encodings of PhenoPackets specified for YAML and JSON, as well
+            several implementations in various languages such as Java, JavaScript, and Python.
+          </p>
+        </div>
+        <div class="col-xs-12">
+          <p class="lead">
+            Source code and examples of PhenoPackets technology may be found in the following GitHub repositories:
+          </p>
+        </div>
+
+        <div class="col-xs-6">
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://github.com/phenopackets" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                PhenoPackets Organization
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/phenopackets/phenopacket-format" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                PhenoPackets Format
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/phenopackets/phenopacket-format/wiki/Getting-Started" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                PhenoPackets Wiki
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-6">
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://github.com/phenopackets/phenopacket-reference-implementation" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                Java Reference Implementation
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/phenopackets/phenopacket-python" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                Python Tools
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/phenopackets/pxftools" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                Java Tools
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <hr class="small light">
+
+        <div class="col-xs-12">
+          <p class="lead">
+            A Google Summer of Code 2016 Project, the PhenoPacket Scraper, extracts ontology-linked phenopackets from published journal abstracts.
+          </p>
+        </div>
+
+        <div class="col-xs-6">
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://github.com/monarch-initiative/phenopacket-scraper-core" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                phenopacket-scraper-core
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/monarch-initiative/phenopacket-scraper-api" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                phenopacket-scraper-api
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-6">
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://github.com/monarch-initiative/phenopacket-scraper-webapp" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                phenopacket-scraper-webapp
+              </a>
+            </li>
+            <li>
+            &nbsp;
+            </li>
+          </ul>
+        </div>
+
+        <div class="text-center">
+          <a href="#a-technology-detailed" class="btn btn-dark"
+            onclick=$("#a-technology-detailed").toggleClass('hidden');>
+            Details
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row hidden" id="a-technology-detailed">
+        <div class="col-xs-12">
+          <div id="a-technology-detailed-markdown" class="markdown">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="a-community" class="services bg-secondary">
+    <div class="container">
+      <div class="row row-inset">
+        <div class="col-xs-12 text-center">
+          <span class="fa-stack fa-4x xbg-primary">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-user-md fa-stack-1x text-primary"></i>
+          </span>
+          <h3>The Community of PhenoPackets</h3>
+          <p class="lead">
+            PhenoPackets were designed by, and intended to be used by, the diverse community of
+            researchers, data modelers, computer scientists, bioinformaticians, environmental
+            scientists, and clinicians dedicated to maximizing the value of existing and new data.
+
+          </p>
+
+
+          <a href="#a-community-detailed" class="btn btn-dark"
+            onclick=$("#a-community-detailed").toggleClass('hidden');>
+            Details
+          </a>
+        </div>
+      </div>
+
+      <div class="row hidden" id="a-community-detailed">
+        <div class="col-xs-12">
+          <div id="a-community-detailed-markdown" class="markdown">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+          <div class="col-xs-12">
+            <div
+              class="carousel slide"
+              data-ride="carousel"
+              data-type="multi"
+              data-interval="5000" id="myCarousel">
+              <div class="carousel-inner">
+                <div class="item active">
+                  <div class="col-md-2 col-sm-6 col-xs-12 carousel-item">
+                    <a href="http://www.orpha.net"class="img-responsive" target="_blank">
+                      <img src="content/partners/logo-orphanet.png" class="img-responsive">
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="col-md-2 col-sm-6 col-xs-12 carousel-item">
+                    <a href="http://ga4gh.org/#/" target="_blank">
+                      <img src="content/partners/logo-globalalliance.jpg" class="img-responsive">
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="col-md-2 col-sm-6 col-xs-12 carousel-item">
+                    <a href="https://monarchinitiative.org" target="_blank">
+                      <img src="content/partners/logo-monarch.jpg" class="img-responsive">
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="col-md-2 col-sm-6 col-xs-12 carousel-item">
+                    <a href="http://disease-ontology.org" target="_blank">
+                      <img src="content/partners/logo-do.png" class="img-responsive">
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="col-md-2 col-sm-6 col-xs-12 carousel-item">
+                    <a href="http://human-phenotype-ontology.github.io" target="_blank">
+                      <img src="content/partners/logo-hpo.jpg" class="img-responsive">
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="col-md-2 col-sm-6 col-xs-12 carousel-item">
+                    <a href="http://geneontology.org" target="_blank">
+                      <img src="content/partners/logo-go.png" class="img-responsive">
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="col-md-2 col-sm-6 col-xs-12 carousel-item">
+                    <a href="http://mygene.info" target="_blank">
+                      <img src="content/partners/logo-mygene.png" class="img-responsive">
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="col-md-2 col-sm-6 col-xs-12 carousel-item">
+                    <a href="http://planteome.org" target="_blank">
+                      <img src="content/partners/logo-planteome.jpg" class="img-responsive">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+            </div>
+          </div>
+  </section>
+
+
+  <section id="documentation" class="services bg-primary">
+    <div class="container">
+      <div class="row row-inset">
+        <div class="col-xs-12 text-center">
+          <span class="fa-stack fa-4x bg-primary">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-book fa-stack-1x text-primary"></i>
+          </span>
+          <h3>Documentation and References</h3>
+        </div>
+
+        <div class="col-xs-6">
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://github.com/phenopackets" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                PhenoPackets Organization
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/phenopackets/phenopacket-format" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                PhenoPackets Format
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/phenopackets/phenopacket-format/wiki/Getting-Started" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                PhenoPackets Wiki
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-6">
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://github.com/phenopackets/phenopacket-reference-implementation" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                Java Reference Implementation
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/phenopackets/phenopacket-python" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                Python Tools
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/phenopackets/pxftools" target="_blank">
+                <i class="fa fa-github fa-fw"></i>
+                Java Tools
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-12">
+          <ul class="list-unstyled">
+            <li>
+              <i class="fa fa-external-link fa-fw"></i>Processing phenotype data using Phenopackets-API and PXFTools
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://www.open-bio.org/wiki/BOSC_2016" target="_blank">
+                BOSC 2016
+              </a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://f1000research.com/slides/5-1649" target=_blank>
+                Slides
+              </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://www.youtube.com/watch?v=8UreKE1eGNY" target=_blank>
+                Video
+              </a>
+            </li>
+
+            <li>
+              <i class="fa fa-external-link fa-fw"></i>
+              Phenopackets: Making phenotype profiles FAIR++ for disease diagnosis and discovery
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://www.force11.org/meetings/force2016" target="_blank">
+                Force2016
+              </a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://figshare.com/articles/Phenopackets_Making_phenotype_profiles_FAIR_for_disease_diagnosis_and_discovery/3180898" target=_blank>
+                Slides
+              </a>
+            </li>
+          </ul>
+
+
+
+
+
+        </div>
+
+        <div class="text-center">
+          <a href="#a-documentation-detailed" class="btn btn-dark"
+            onclick=$("#a-documentation-detailed").toggleClass('hidden');>
+            Details
+          </a>
+        </div>
+      </div>
+
+      <div class="row hidden" id="a-documentation-detailed">
+        <div class="col-xs-12">
+          <div id="a-documentation-detailed-markdown" class="markdown">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div id="contact" class="row">
+          <div class="col-lg-10 col-lg-offset-1 text-center">
+            <span class="fa-stack fa-4x" style="color: transparent;">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-comments fa-stack-1x text-primary"></i>
+            </span>
+            <h4>
+              <strong>PhenoPackets.org</strong>
+            </h4>
+            <p>Earth</p>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fa fa-link fa-fw"></i>
+                <a
+                  href="http://phenopackets.org"
+                  target="_blank">
+                  http://phenopackets.org
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-twitter fa-fw"></i>
+                <a
+                  href="https://twitter.com/phenopack"
+                  target="_blank">
+                  &commat;phenopack
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-twitter fa-fw"></i>
+                <a
+                  href="https://twitter.com/hashtag/phenopackets"
+                  target="_blank">
+                  &num;phenopackets
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-envelope-o fa-fw"></i>
+                <a
+                  href="mailto:phenopackets_org_email_placeholder">
+                  phenopackets_org_email_placeholder
+                </a>
+              </li>
+            </ul>
+            <br>
+            <hr class="small">
+            <p class="text-muted">
+              Site &copy; PhenoPackets.org 2016
+            </p>
+            <p class="small text-muted">
+              Theme based on
+              <a href="https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio/"
+                target="_blank">
+                Stylish Portfolio
+              </a>
+              &copy; 2013-2016 Blackrock Digital LLC
+              <br>DNA image adapted from Wikimedia Commons
+              <a href="https://commons.wikimedia.org/wiki/File:DNA_com_GGN.jpg"
+                target="_blank">
+                DNA com GGN
+              </a>
+              <br>Partner Logos verbiage here
+            </p>
+          </div>
+      </div>
+    </div>
+      <a id="to-top" href="#top" class="btn btn-dark btn-lg">
+        <i class="fa fa-chevron-up fa-fw fa-1x"></i>
+      </a>
+  </footer>
+
+  <script src="site/js/jquery.js"></script>
+  <script src="site/js/bootstrap.min.js"></script>
+  <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+  </script>
+
+
+  <script>
+    $('.carousel[data-type="multi"] .item').each(function(){
+      var next = $(this).next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo($(this));
+
+      for (var i=0;i<4;i++) {
+        next=next.next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+
+        next.children(':first-child').clone().appendTo($(this));
+      }
+    });
+  </script>
+
+</body>
+
+</html>
