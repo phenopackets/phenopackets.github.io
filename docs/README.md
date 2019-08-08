@@ -1,6 +1,6 @@
-# About this `/docs` directory
+# About this repository
 
-The contents of this directory are deployed via GitHub Pages as [http://phenopackets.org](http://phenopackets.org).
+The contents of this repository are deployed via GitHub Pages as [http://phenopackets.org](http://phenopackets.org).
 
 The CNAME file determines which site can legitimately redirect here.
 Currently, this is http://phenopackets.org. The CNAME in the master branch of
@@ -57,11 +57,11 @@ It is necessary to run a local HTTP server to be able to try out the website eff
 npm install -g http-server
 ```
 
-Once you have an HTTP server, it should be started so that it serves the `phenopacket-format/docs` directory as the website base URL `/`. In addition, caching should be disabled, so that local edits can be seen upon page refresh. For example, here is how to do this with `http-server`:
+Once you have an HTTP server, it should be started so that it serves the `phenopackets.github.io/docs` directory as the website base URL `/`. In addition, caching should be disabled, so that local edits can be seen upon page refresh. For example, here is how to do this with `http-server`:
 
 
 ```
-cd phenopacket-format/docs/
+cd phenopackets.github.io/docs/
 http-server -c-1 .
 ```
 
