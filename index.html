@@ -283,8 +283,12 @@
           </span>
           <h3>The Technology of Phenopackets</h3>
           <p class="lead">
-            There are currently encodings of Phenopackets specified for YAML and JSON, as well
-            several implementations in various languages such as Java, JavaScript, and Python.
+            Phenopackets are defined using a
+            <a href="https://github.com/phenopackets/phenopacket-schema" target="_blank">
+            protobuf schema
+            </a>
+            this allows implementations to be automatically generated for many languages. The phenopacket-schema build
+            process automatically produces language bindings for Java, Python and C++.
           </p>
         </div>
         <div class="col-xs-12">
@@ -301,12 +305,22 @@
                 Phenopackets organization
               </a>
             </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6">
+          <ul class="list-unstyled">
             <li>
               <a href="https://github.com/phenopackets/phenopacket-schema" target="_blank">
                 <i class="fa fa-github fa-fw"></i>
                 Phenopacket schema
               </a>
             </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6">
+          <ul class="list-unstyled">
             <li>
               <a href="https://phenopackets-schema.readthedocs.io/en/latest/index.html" target="_blank">
                 <i class="fa fa-github fa-fw"></i>
@@ -354,12 +368,12 @@
 <!--          </ul>-->
 <!--        </div>-->
 
-        <div class="text-center">
-          <a href="#a-technology-detailed" class="btn btn-dark"
-            onclick=$("#a-technology-detailed").toggleClass('hidden');>
-            Details
-          </a>
-        </div>
+<!--        <div class="text-center">-->
+<!--          <a href="#a-technology-detailed" class="btn btn-dark"-->
+<!--            onclick=$("#a-technology-detailed").toggleClass('hidden');>-->
+<!--            Details-->
+<!--          </a>-->
+<!--        </div>-->
 
       </div>
 
